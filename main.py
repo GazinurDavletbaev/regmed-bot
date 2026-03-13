@@ -12,6 +12,8 @@ from presentation.telegram.handlers.access_request import router as access_reque
 from presentation.telegram.handlers.admin import router as admin_router
 from presentation.telegram.handlers.questions import router as questions_router
 from presentation.telegram.middlewares.access import AccessMiddleware
+from presentation.telegram.handlers.gost_list import router as gost_list_router
+
 
 # Логирование
 logging.basicConfig(level=logging.INFO)
@@ -35,7 +37,7 @@ async def main():
     dp.include_router(access_request_router)
     dp.include_router(admin_router)
     dp.include_router(questions_router)
-
+    dp.include_router(gost_list_router)
     # Запуск
     await dp.start_polling(bot)
 
