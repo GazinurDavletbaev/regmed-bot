@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РЕГМЕД - ГОСТ Ассистент</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <h2>РЕГМЕД</h2>
+                </div>
+                <button id="newChatBtn" class="new-chat-btn">➕ Новый чат</button>
+                <div class="lab-info">
+                    <label>🔬 Лаборатория:</label>
+                    <div id="labNameDisplay" class="lab-name-display">Общая база</div>
+                </div>
+                <div class="upload-area">
+                    <button id="uploadBtn" class="upload-btn">📄 Загрузить ГОСТы</button>
+                </div>
+            </div>
+            <div id="chatList" class="chat-list">
+                <div class="empty-chats">Нет чатов. Создайте новый</div>
+            </div>
+        </div>
+        
+        <div class="chat-area">
+            <div class="chat-header">
+                <div id="currentLabDisplay" class="current-lab">Общая база</div>
+            </div>
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <h2>Добро пожаловать в РЕГМЕД</h2>
+                    <p>Задайте вопрос по ГОСТам или загрузите свои документы</p>
+                    <p class="small">💡 Совет: загрузите PDF с ГОСТами вашей лаборатории, и я буду отвечать на их основе</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <textarea id="messageInput" placeholder="Введите ваш вопрос..." rows="2"></textarea>
+                <button id="sendBtn" class="send-btn">Отправить</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Загрузка ГОСТов</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <label for="labNameInput">Название лаборатории:</label>
+                <input type="text" id="labNameInput" placeholder="Например: Лаборатория строительных материалов" />
+                <label for="fileInput" class="file-label">Выберите PDF файлы:</label>
+                <input type="file" id="fileInput" multiple accept=".pdf" />
+                <div id="fileList" class="file-list"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmUploadBtn" class="confirm-btn">Загрузить</button>
+                <button id="cancelUploadBtn" class="cancel-btn">Отмена</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

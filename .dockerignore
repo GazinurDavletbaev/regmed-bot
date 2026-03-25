@@ -1,0 +1,13 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pdf
+*.docx
+data/
+gost_pdfs/
+ghost_pdfs/
+.git/
+.dockerignore
+Dockerfile
+docker-compose.yml
