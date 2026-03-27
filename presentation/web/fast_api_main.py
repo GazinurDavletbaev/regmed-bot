@@ -14,6 +14,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from domain.rag_service import RAGService
+from presentation.web.auth import router as auth_router
 
 
 logging.basicConfig(level=logging.INFO)
@@ -154,3 +155,4 @@ async def delete_chat(chat_id: str):
         del sessions[chat_id]
         return {"message": "Чат удалён"}
     raise HTTPException(status_code=404, detail="Чат не найден")
+app.include_router(auth_router)
